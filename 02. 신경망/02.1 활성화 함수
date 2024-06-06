@@ -1,1 +1,14 @@
+# 계단함수
+def step_function(x):
+  y = x > 0
+  return y.astype(np.int64)
 
+# Sigmoid
+def sigmoid(x):
+  return 1 / (1 + exp(-x))
+
+# ReLU
+def relu(x):
+  return np.maximum(x, 0)
+
+# 
