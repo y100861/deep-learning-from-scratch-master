@@ -1,0 +1,7 @@
+# XOR 회로
+def XOR(x1, y1):
+    s1 = NAND(x1, y1)
+    s2 = OR(x1, y1)
+    value = AND(s1, s2)
+
+    return value
