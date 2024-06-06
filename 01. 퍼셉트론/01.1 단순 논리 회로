@@ -33,11 +33,3 @@ def OR(x1, x2):
         return 0
     else:
         return 1
-
-# XOR 회로
-def XOR(x1, y1):
-    s1 = NAND(x1, y1)
-    s2 = OR(x1, y1)
-    value = AND(s1, s2)
-
-    return value
