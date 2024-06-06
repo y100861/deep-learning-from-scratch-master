@@ -1,9 +1,43 @@
 # AND 회로
 def AND(x1, x2):
-    w1, w2, theta = 0.5, 0.5, 0.7
-    value = x1*w1 + x2*w2
-    
-    if value <= theta:
+    x = np.array([x1, x2])
+    w = np.array([0.5, 0.5])
+    b = -0.7
+    value = np.sum(w*x) + b
+
+    if value <= 0:
         return 0
     else:
         return 1
+
+# NAND 회로
+def NAND(x1, x2):
+    x = np.array([x1, x2])
+    w = np.array([-0.5, -0.5])
+    b = 0.7
+    value = np.sum(w*x) + b
+
+    if value <= 0:
+        return 0
+    else:
+        return 1
+
+# OR 회로
+def OR(x1, x2):
+    x = np.array([x1, x2])
+    w = np.array([0.5, 0.5])
+    b = -0.2
+    value = np.sum(w*x) + b
+
+    if value <= 0:
+        return 0
+    else:
+        return 1
+
+# XOR 회로
+def XOR(x1, y1):
+    s1 = NAND(x1, y1)
+    s2 = OR(x1, y1)
+    value = AND(s1, s2)
+
+    return value
