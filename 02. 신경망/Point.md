@@ -1,2 +1,2 @@
 ## Sigmoid
-$y = \frac{1}{1+\exp{-x}}$
+$y = \frac{1}{1+e^-x}$
