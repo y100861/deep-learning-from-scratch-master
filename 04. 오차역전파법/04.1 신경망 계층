@@ -52,3 +52,23 @@ class Sigmoid:
         dx = dout * self.out * (1.0 - self.out)
 
         return dx
+
+
+class SoftmaxWithLoss:
+    def __init__(self):
+        self.y = None
+        self.t = None
+        self.loss = None
+    
+    def forward(self, x, t):
+        self.t = t
+        self.y = softmax(x)
+        self.loss = cross_entropy_error(self.y, self.t)
+
+        return self.loss
+    
+    def backward(self, dout=1):
+        batch_size = self.t.shape[0]
+        dout = (self.y - self.t) / batch_size
+
+        return dout
