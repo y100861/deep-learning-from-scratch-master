@@ -11,5 +11,35 @@
 
 ## 덧셈 노드의 역전파
 $$z = x + y$$ </br>
+
 $$\frac{\partial z}{\partial x} = 1$$ </br>
+
 $$\frac{\partial z}{\partial y} = 1$$ </br>
+
+
+## 곱셈 노드의 역전파
+$$z = xy$$ </br>
+
+$$\frac{\partial z}{\partial x} = y$$ </br>
+
+$$\frac{\partial z}{\partial y} = x$$ </br>
+
+
+## ReLU의 역전파
+$$y =
+  \begin{cases}
+    x  & \quad \text{(x > 0)} \\
+    0  & \quad \text{(x $\leq$ 0)}
+  \end{cases}
+$$
+
+$$\frac{\partial y}{\partial x} =
+  \begin{cases}
+    1  & \quad \text{(x > 0)} \\
+    0  & \quad \text{(x $\leq$ 0)}
+  \end{cases}
+$$
+
+
+## Sigmoid의 역전파
+$$y = \frac{1}{1 + e^{-x}}$$
