@@ -43,3 +43,22 @@ $$
 
 ## Sigmoid의 역전파
 $$y = \frac{1}{1 + e^{-x}}$$
+
+$$ \begin{align*}
+\frac{\partial y}{\partial x} &= \frac{\partial L}{\partial y}y^2e^{-x} \\
+                              &= \frac{\partial L}{\partial y}\frac{1}{(1 + e^{-x})^2}e^{-x}\\
+                              &= \frac{\partial L}{\partial y}\frac{1}{1 + e^{-x}}\frac{e^{-x}}{1+e^{-x}}\\
+                              &= \frac{\partial L}{\partial y}y(1-y)\\
+\end{align*} $$
+
+
+## Affine의 역전파
+$$Y = X \bullet W + B$$
+
+$$\frac{\partial L}{\partial X} = \frac{\partial L}{\partial Y} \bullet W^T$$
+
+$$\frac{\partial L}{\partial W} = X^T \bullet \frac{\partial L}{\partial Y}$$
+
+
+## SoftmaxWithLoss의 역전파
+$$\frac{\partial L}{\partial Y} = y_i - t_i$$
